@@ -7,5 +7,5 @@ import javax.inject.Inject
 class GetListClientUseCase @Inject constructor(
     private val repository: ClientRepository
 ){
-    suspend operator fun invoke(): ArrayList<ClientModel> = repository.getAllClients()
+    suspend operator fun invoke(): ArrayList<ClientModel>? = repository.getAllClients()
 }

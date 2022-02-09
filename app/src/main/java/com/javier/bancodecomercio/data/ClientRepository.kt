@@ -9,9 +9,11 @@ class ClientRepository @Inject constructor(
     private val api: ClientService,
     private val clientProvider: ClientProvider
 ){
-    suspend fun getAllClients(): ArrayList<ClientModel> {
+    suspend fun getAllClients(): ArrayList<ClientModel>? {
         val response = api.getClients()
-        clientProvider.clients = response
+        if (!response.isNullOrEmpty()) {
+            clientProvider.clients = response
+        }
         return response
     }
 

@@ -10,5 +10,5 @@ interface ClientAPI {
     suspend fun getListClient (): Response<ArrayList<ClientModel>>
 
     @GET("/users")
-    suspend fun getClient (@Query("id") id: Int) : Response<ClientModel>
+    suspend fun getClient (@Query("id") id: Int) : Response<ArrayList<ClientModel>>
 }

@@ -47,11 +47,6 @@ class RecyclerClientListAdapter(
                 clientLocation.longitude = geo.lng.toDouble()
                 val distance = (myLocation.distanceTo(clientLocation).toDouble()) / 1000.00
                 textDistanceClient.text = String.format("%.2f km", distance)
-                /*itemView.setOnClickListener {
-                    val intentToDetail = Intent(context, ClientDetailsActivity::class.java)
-                    intentToDetail.putExtra("IDClient", id)
-                    ContextCompat.startActivity(context, intentToDetail, Bundle())
-                }*/
                 itemView.setOnClickListener { clientListener?.invoke(this) }
             }
         }

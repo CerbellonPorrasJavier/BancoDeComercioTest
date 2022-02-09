@@ -1,24 +1,29 @@
 package com.javier.bancodecomercio.data.network
 
+import android.util.Log
 import com.javier.bancodecomercio.data.model.ClientModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class ClientService @Inject constructor(
     private val api: ClientAPI
 ) {
-    suspend fun getClients(): ArrayList<ClientModel> {
-        return withContext(Dispatchers.IO) {
+    suspend fun getClients(): ArrayList<ClientModel>? {
+        return try {
             val response = api.getListClient()
             response.body() ?: arrayListOf()
+        } catch (ex: Exception) {
+            Log.e("ClientService", "getClients: ${ex.message}")
+            null
         }
     }
 
     suspend fun getClient(id: Int): ClientModel? {
-        return withContext(Dispatchers.IO) {
+        return try {
             val response = api.getClient(id)
-            response.body()
+            response.body()?.firstOrNull()
+        } catch (ex: Exception) {
+            Log.e("ClientService", "getClient: ${ex.message}")
+            null
         }
     }
 }

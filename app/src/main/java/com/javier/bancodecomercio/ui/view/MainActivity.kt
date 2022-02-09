@@ -18,8 +18,9 @@ import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.javier.bancodecomercio.databinding.ActivityMainBinding
 import com.javier.bancodecomercio.ui.view.recyclerview.RecyclerClientListAdapter
-import com.javier.bancodecomercio.ui.viewmodel.ClientViewModel
+import com.javier.bancodecomercio.ui.viewmodel.ClientsViewModel
 import com.javier.bancodecomercio.utils.showToast
+import com.javier.bancodecomercio.utils.startActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var clientModelAdapter: RecyclerClientListAdapter
 
-    private val clientViewModel : ClientViewModel by viewModels()
+    private val clientViewModel : ClientsViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,9 +63,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun goToClient(id: Int) {
-        Intent(this, ClientDetailsActivity::class.java).apply {
+        startActivity<ClientDetailsActivity> {
             putExtra(ClientDetailsActivity.ID_CLIENT, id)
-            startActivity(this)
         }
     }
 
@@ -144,5 +144,9 @@ class MainActivity : AppCompatActivity() {
             Log.i(SplashActivity.TAG, "Requesting permission")
             startLocationPermissionRequest()
         }
+    }
+
+    override fun onBackPressed() {
+        moveTaskToBack(true)
     }
 }

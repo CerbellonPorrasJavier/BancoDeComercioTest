@@ -1,4 +1,4 @@
-package com.javier.bancodecomercio.utils
+package com.javier.bancodecomercio
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
