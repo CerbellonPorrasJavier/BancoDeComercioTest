@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.view.ClientDetailsActivity"
+    android:background="@color/white"
+    android:backgroundTint="@color/white"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="50dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:backgroundTint="@color/white"
+            app:cardElevation="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/app_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                app:elevation="10dp">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?actionBarSize"
+                    android:background="@color/red_main"
+                    app:contentInsetStart="0dp"
+                    app:contentInsetStartWithNavigation="0dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/back_arrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="20dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_baseline_arrow_back"
+                            app:tint="@color/black" />
+
+                        <TextView
+                            android:id="@+id/text_toolbar_company"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/nunito_bold"
+                            android:textColor="@color/white"
+                            android:textSize="21sp"
+                            tools:text="Banco de Comercio" />
+
+                    </RelativeLayout>
+
+                </androidx.appcompat.widget.Toolbar>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/text_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:text="@string/name_client"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:fontFamily="@font/nunito_bold"
+            android:textSize="20sp"
+            android:layout_margin="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card_view_app_bar"/>
+
+        <TextView
+            android:id="@+id/text_name_client"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="300dp"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical"
+            android:textAllCaps="true"
+            android:textColor="@color/red_main"
+            android:fontFamily="@font/nunito_medium"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="@+id/text_name"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/text_name"
+            tools:text="Cerbellon Porras Javier Humberto" />
+
+        <TextView
+            android:id="@+id/text_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:text="@string/username_client"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:fontFamily="@font/nunito_bold"
+            android:textSize="20sp"
+            android:layout_margin="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_name_client"/>
+
+        <TextView
+            android:id="@+id/text_username_client"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/nunito_medium"
+            android:maxWidth="300dp"
+            android:orientation="vertical"
+            android:textAllCaps="true"
+            android:textColor="@color/red_main"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="@+id/text_name"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/text_name_client"
+            app:layout_constraintTop_toTopOf="@+id/text_username"
+            tools:text="Javiercp18" />
+
+        <TextView
+            android:id="@+id/text_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:text="@string/email_client"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_bold"
+            android:textSize="20sp"
+            android:layout_margin="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_username_client"/>
+
+        <TextView
+            android:id="@+id/text_email_client"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical"
+            android:textColor="@color/red_main"
+            android:fontFamily="@font/nunito_medium"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="@+id/text_email"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/text_name_client"
+            app:layout_constraintTop_toTopOf="@+id/text_email"
+            tools:text="javiercp1202@gmail.com" />
+
+        <TextView
+            android:id="@+id/text_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:text="@string/address_client"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_bold"
+            android:textSize="20sp"
+            android:layout_margin="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_email_client"/>
+
+        <TextView
+            android:id="@+id/text_address_client"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical"
+            android:textAllCaps="true"
+            android:textColor="@color/red_main"
+            android:fontFamily="@font/nunito_medium"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="@+id/text_address"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/text_name_client"
+            app:layout_constraintTop_toTopOf="@+id/text_address"
+            tools:text="AV. TUPAC AMARU 5603" />
+
+        <TextView
+            android:id="@+id/text_city_client"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:textAllCaps="true"
+            android:textColor="@color/red_main"
+            android:fontFamily="@font/nunito_medium"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/text_address_client"
+            app:layout_constraintTop_toBottomOf="@+id/text_address_client"
+            tools:text="Lima" />
+
+        <TextView
+            android:id="@+id/text_zipcode_client"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:textAllCaps="true"
+            android:textColor="@color/red_main"
+            android:fontFamily="@font/nunito_medium"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/text_address_client"
+            app:layout_constraintTop_toBottomOf="@+id/text_city_client"
+            tools:text="92998-3874" />
+
+        <TextView
+            android:id="@+id/text_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:text="@string/phone_client"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_bold"
+            android:textSize="20sp"
+            android:layout_margin="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_zipcode_client"/>
+
+        <TextView
+            android:id="@+id/text_phone_client"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical"
+            android:textAllCaps="true"
+            android:textColor="@color/red_main"
+            android:fontFamily="@font/nunito_medium"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="@+id/text_phone"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/text_name_client"
+            app:layout_constraintTop_toTopOf="@+id/text_phone"
+            tools:text="+51 919 597 754" />
+
+        <TextView
+            android:id="@+id/text_website"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:text="@string/website_client"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_bold"
+            android:textSize="20sp"
+            android:layout_margin="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_phone_client"/>
+
+        <TextView
+            android:id="@+id/text_website_client"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical"
+            android:textColor="@color/red_main"
+            android:fontFamily="@font/nunito_medium"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="@+id/text_website"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/text_name_client"
+            app:layout_constraintTop_toTopOf="@+id/text_website"
+            tools:text="www.nextu.com" />
+
+        <TextView
+            android:id="@+id/text_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:text="@string/company_client"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_bold"
+            android:textSize="20sp"
+            android:layout_margin="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_website_client"/>
+
+        <TextView
+            android:id="@+id/text_company_client"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical"
+            android:textAllCaps="true"
+            android:textColor="@color/red_main"
+            android:fontFamily="@font/nunito_medium"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="@+id/text_company"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/text_name_client"
+            app:layout_constraintTop_toTopOf="@+id/text_company"
+            tools:text="Romaguera-Crona" />
+
+        <TextView
+            android:id="@+id/text_catchphrase_client"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="300dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:textAllCaps="true"
+            android:textColor="@color/red_main"
+            android:fontFamily="@font/nunito_medium"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/text_company_client"
+            app:layout_constraintTop_toBottomOf="@+id/text_company_client"
+            tools:text="Multi-layered client-server neural-net" />
+
+        <TextView
+            android:id="@+id/text_bs_client"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="300dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:textAllCaps="true"
+            android:textColor="@color/red_main"
+            android:fontFamily="@font/nunito_medium"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/text_company_client"
+            app:layout_constraintTop_toBottomOf="@+id/text_catchphrase_client"
+            tools:text="harness real-time e-markets" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

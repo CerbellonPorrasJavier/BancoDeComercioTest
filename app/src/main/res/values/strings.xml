@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Banco de Comercio</string>
+    <string name="name_client">Nombre del cliente</string>
+    <string name="email_client">Email del cliente</string>
+    <string name="address_client">Dirección del cliente</string>
+    <string name="phone_client">Teléfono del cliente</string>
+    <string name="website_client">Sitio web del cliente</string>
+    <string name="company_client">Detalles de la compñía del cliente</string>
+    <string name="username_client">Nombre de usuario del cliente</string>
+</resources>
