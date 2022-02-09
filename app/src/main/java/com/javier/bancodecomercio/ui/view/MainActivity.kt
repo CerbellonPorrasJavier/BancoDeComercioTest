@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
                         }
                     )
                     adapter = clientModelAdapter
+                    startLayoutAnimation()
                 }
             })
             clientViewModel.isLoading.observe(this@MainActivity, {
@@ -84,13 +85,14 @@ class MainActivity : AppCompatActivity() {
                         val builder = AlertDialog.Builder(this)
                         builder.apply {
                             setMessage("¿Usar localización GPS?").setCancelable(false)
-                            setPositiveButton("Si") { _, _ ->
+                            setPositiveButton("Si") { dialog, _ ->
+                                dialog.cancel()
                                 val intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
                                 startActivity(intent)
                             }
                             setNegativeButton("No") { dialog, _ ->
                                 dialog.cancel()
-                                moveTaskToBack(true)
+                                onBackPressed()
                                 showToast("Para poder acceder a las funciones de la app debe de activar su GPS")
                             }
                             create()

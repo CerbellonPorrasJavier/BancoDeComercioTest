@@ -10,7 +10,10 @@
     android:layout_marginBottom="8dp"
     android:background="@color/gray"
     android:backgroundTint="@color/gray"
-    app:cardCornerRadius="15dp">
+    app:cardCornerRadius="15dp"
+    android:focusable="true"
+    android:clickable="true"
+    android:foreground="@drawable/custom_ripple">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -24,7 +27,6 @@
             android:fontFamily="@font/nunito_medium"
             android:textColor="@color/red_main"
             android:textSize="18sp"
-            android:layout_margin="4dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/text_address_client"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -39,7 +41,7 @@
             android:fontFamily="@font/nunito_regular"
             android:textColor="@android:color/black"
             android:textSize="14sp"
-            android:layout_margin="4dp"
+            android:padding="5dp"
             android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="@+id/text_company_client"

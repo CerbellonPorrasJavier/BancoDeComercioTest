@@ -10,7 +10,6 @@ import android.os.Handler
 import android.os.Looper
 import android.provider.Settings
 import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -18,6 +17,7 @@ import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.javier.bancodecomercio.R
 import com.javier.bancodecomercio.utils.Constants.DELAY
+import com.javier.bancodecomercio.utils.showToast
 import com.javier.bancodecomercio.utils.startActivity
 
 @SuppressLint("CustomSplashScreen")
@@ -57,18 +57,15 @@ class SplashActivity : AppCompatActivity() {
                         val builder = AlertDialog.Builder(this)
                         builder.apply {
                             setMessage("¿Usar localización GPS?").setCancelable(false)
-                            setPositiveButton("Si") { _, _ ->
+                            setPositiveButton("Si") { dialog, _ ->
+                                dialog.cancel()
                                 val intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
                                 startActivity(intent)
                             }
                             setNegativeButton("No") { dialog, _ ->
                                 dialog.cancel()
                                 onBackPressed()
-                                Toast.makeText(
-                                    this@SplashActivity,
-                                    "Para poder acceder a las funciones de la app debe de activar su GPS",
-                                    Toast.LENGTH_SHORT
-                                ).show()
+                                showToast("Para poder acceder a las funciones de la app debe de activar su GPS")
                             }
                             create()
                             show()

@@ -3,10 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/javie/AndroidStudioProjects/BancodeComercio/app/src/main/res/drawable/custom_ripple.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/javie/AndroidStudioProjects/BancodeComercio/app/src/main/res/drawable/ic_banco_de_comercio_logo.xml" value="0.26205128205128203" />
         <entry key="..\:/Users/javie/AndroidStudioProjects/BancodeComercio/app/src/main/res/layout/activity_client_details.xml" value="0.25" />
         <entry key="..\:/Users/javie/AndroidStudioProjects/BancodeComercio/app/src/main/res/layout/activity_main.xml" value="0.24615384615384617" />
         <entry key="..\:/Users/javie/AndroidStudioProjects/BancodeComercio/app/src/main/res/layout/activity_splash.xml" value="0.25" />
+        <entry key="..\:/Users/javie/AndroidStudioProjects/BancodeComercio/app/src/main/res/layout/custom_ripple.xml" value="0.25" />
         <entry key="..\:/Users/javie/AndroidStudioProjects/BancodeComercio/app/src/main/res/layout/item_client_list.xml" value="0.25" />
       </map>
     </option>
